@@ -1,9 +1,9 @@
 import sys
-from PyQt5.QtWidgets import QMainWindow, QApplication, QTextEdit, QAction
-from PyQt5.QtGui import QIcon
+import PyQt5.QtWidgets
+import PyQt5.QtGui
 import qdarkstyle
 
-class Example(QMainWindow):
+class Example(PyQt5.QtWidgets.QMainWindow):
 	def __init__(self):
 		super().__init__()
 
@@ -11,10 +11,11 @@ class Example(QMainWindow):
 
 	def initUI(self):
 		#textedit widget, centralwidget set to text edit (occupy all space remaining)
-		textEdit = QTextEdit()
+		textEdit = PyQt5.QtWidgets.QTextEdit()
 		self.setCentralWidget(textEdit)
 
-		exitAction = QAction(QIcon('.\..\..\Tools\WindowsIcons-master\WindowsPhone\dark\/appbar.close.png'), 'Exit', self)
+		exitAction = PyQt5.QtWidgets.QAction(
+			PyQt5.QtGui.QIcon('.\..\..\Tools\WindowsIcons-master\WindowsPhone\dark\/appbar.close.png'), 'Exit', self)
 		exitAction.setShortcut('Ctrl+Q')
 		exitAction.setStatusTip('Exit application')
 		exitAction.triggered.connect(self.close)
@@ -35,7 +36,7 @@ class Example(QMainWindow):
 		
 if __name__ == '__main__':
 	
-	app = QApplication(sys.argv)
+	app = PyQt5.QtWidgets.QApplication(sys.argv)
 	app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
 
 	ex = Example()
