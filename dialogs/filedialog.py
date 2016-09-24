@@ -56,7 +56,7 @@ The contents of the file are loaded into the text edit widget.
 # class Example(QMainWindow):
 #     def __init__(self):
 #         super().__init__()
-#         self.initUI()
+#         self.init_ui()
 '''
 The example is based on the QMainWindow widget 
 because we centrally set a text edit widget.

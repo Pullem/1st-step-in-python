@@ -36,8 +36,8 @@ if __name__ == '__main__':
 	The __init__() method is a constructor method in Python language.
 '''
 
-#self.initUI() 
-'''The creation of the GUI is delegated to the initUI() method.'''
+#self.init_ui()
+'''The creation of the GUI is delegated to the init_ui() method.'''
 
 #self.setGeometry(300, 300, 300, 220)
 #self.setWindowTitle('Icon')

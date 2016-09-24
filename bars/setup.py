@@ -1,3 +1,5 @@
+# I'm not shure, but i believe, we don't need this for our learning - Gerd
+
 import sys
 from cx_Freeze import setup, Executable
 

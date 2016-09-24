@@ -3,31 +3,37 @@ import PyQt5.QtWidgets
 import PyQt5.QtGui
 import qdarkstyle
 
+
 class Example(PyQt5.QtWidgets.QMainWindow):
 	def __init__(self):
 		super().__init__()
 
-		self.initUI()
+		self.init_ui()
 
-	def initUI(self):
-		#textedit widget, centralwidget set to text edit (occupy all space remaining)
-		textEdit = PyQt5.QtWidgets.QTextEdit()
-		self.setCentralWidget(textEdit)
+	def init_ui(self):
+		# textedit widget, centralwidget set to text edit (occupy all space remaining)
+		text_edit = PyQt5.QtWidgets.QTextEdit()
+		self.setCentralWidget(text_edit)
 
-		exitAction = PyQt5.QtWidgets.QAction(
-			PyQt5.QtGui.QIcon('.\..\..\Tools\WindowsIcons-master\WindowsPhone\dark\/appbar.close.png'), 'Exit', self)
-		exitAction.setShortcut('Ctrl+Q')
-		exitAction.setStatusTip('Exit application')
-		exitAction.triggered.connect(self.close)
+# of course, this path to 'appbar.close.png' doesn't exist, therefor modyfy this line for our environment.
+# with the original line:
+# no error at execution of this script, but, in the gui, move your mouse under the menueitem 'file' ( a bit right),
+# and you will see only a blue frame without icon
+		exit_action = PyQt5.QtWidgets.QAction(
+			# PyQt5.QtGui.QIcon('.\..\..\Tools\WindowsIcons-master\WindowsPhone\dark\/appbar.close.png'), 'Exit', self)
+			PyQt5.QtGui.QIcon('.\Icons\cross.png'), 'Exit', self)
+		exit_action.setShortcut('Ctrl+Q')
+		exit_action.setStatusTip('Exit application')
+		exit_action.triggered.connect(self.close)
 
 		self.statusBar()
 
 		menubar = self.menuBar()
-		fileMenu = menubar.addMenu('&File')
-		fileMenu.addAction(exitAction)
+		file_menu = menubar.addMenu('&File')
+		file_menu.addAction(exit_action)
 
 		toolbar = self.addToolBar('Exit')
-		toolbar.addAction(exitAction)
+		toolbar.addAction(exit_action)
 		
 		self.setGeometry(300, 300, 350, 250)
 		self.setWindowTitle('Main window')    
