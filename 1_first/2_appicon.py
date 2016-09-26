@@ -1,9 +1,14 @@
 import sys
 import qdarkstyle
-from PyQt5.QtWidgets import QApplication, QWidget
-from PyQt5.QtGui import QIcon 
 
-class Example(QWidget):
+# original import: from PyQt5.QtWidgets import QApplication, QWidget
+# PyCharm says:     - gerd
+import PyQt5.QtWidgets
+# and so on:
+import PyQt5.QtGui
+
+# class nameoftheclass(parent_class):   - gerd
+class Example(PyQt5.QtWidgets.QWidget):
 
 	def __init__(self):
 		super().__init__()
@@ -12,20 +17,24 @@ class Example(QWidget):
 
 	def initUI(self):
 		self.setGeometry(300, 300, 300, 220)
-		self.setWindowTitle('Icon App')
-		self.setWindowIcon(QIcon('./Icons/gxs-256.ico'))
+		self.setWindowTitle('<< App Icon !!')
+# 		self.setWindowIcon(PyQt5.QtGui.QIcon('./Icons/gxs-256.ico'))
+		self.setWindowIcon(PyQt5.QtGui.QIcon(r'.\Icons\battery-full.png'))
+# obove, both lines work for me:  / or \  ??, i believed it depends of the operating system
+# take notice of the 'r' in front of the path to battery-full
+# we have the character string ...ons\batte.... ; the combination '\b' is a text command:
 
 		self.show()
 
 if __name__ == '__main__':
-	app = QApplication(sys.argv)
+	app = PyQt5.QtWidgets.QApplication(sys.argv)
 	app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
 
 	ex = Example()
 	sys.exit(app.exec_())
 
 
-#class Example(QWidget):
+# class Example(QWidget):
 #    def __init__(self):
 #        super().__init__()
 '''Here we create a new class called Example. The Example class inherits 

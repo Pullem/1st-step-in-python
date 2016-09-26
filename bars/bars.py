@@ -4,11 +4,14 @@ import PyQt5.QtGui
 import qdarkstyle
 
 
+# class nameoftheclass(parent_class):
 class Example(PyQt5.QtWidgets.QMainWindow):
+	# functionname __init__
 	def __init__(self):
 		super().__init__()
-
+		
 		self.init_ui()
+		# print(self.init_ui)
 
 	def init_ui(self):
 		# textedit widget, centralwidget set to text edit (occupy all space remaining)

@@ -4,11 +4,13 @@ My way to learn python and pyqt5
 I don't like books (epub, pdf), start with page 001 and read until 256
 just examine the code of a useful python script, this is my way
 
-Examples with many notes and remarks, but don't believe what you read: 
+Examples with many notes and remarks from 'alvin lam' !!
+
+and some, intended, from me, gerd , but don't believe what you read: 
 this is my understanding of these sources,  and it may be wrong !!!
 
 win 10pro 64bit
-python 3.5 / pyqt 5.6
+python 3.5 / pyqt 5.7
 My ide is JetBrains PyCharm Community Edition 2016.2
 
 ## icons
@@ -39,8 +41,12 @@ x = sqrt(4)  # sqrt may be part of modu, if not redefined in between
 import modu
 [...]
 x = modu.sqrt(4)  # sqrt is visibly part of modu's namespace
+this is also the suggestion of PyCharm
 
 ## class
+
+We define a class in the following way
+class nameoftheclass(parent_class):
 
 
 
@@ -70,4 +76,12 @@ This is because a function always returns something in Python, even if you donâ€
 If the function has no return statement in its body, itâ€™s return value is None. )
 
 
-## 
+## PyQt5
+
+more information [PyQt5 Reference Guide](http://pyqt.sourceforge.net/Docs/PyQt5/index.html)
+
+e.g. for '1_first.py'
+in **quick search**: QWidget  ; one answer is 'PyQt5.QtWidgets.QWidget' ,
+left mouse click and than you will find a pointer to the C++ doc, scroll down
+**Public Functions** and here you find more information to 'resize' 'move' ... :
+

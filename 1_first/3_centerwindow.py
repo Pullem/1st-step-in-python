@@ -1,11 +1,14 @@
 import sys
 import qdarkstyle
-from PyQt5.QtWidgets import (QApplication, QWidget, QToolTip, QPushButton, 
-	QDesktopWidget)
-from PyQt5.QtGui import QIcon, QFont
-from PyQt5.QtCore import QCoreApplication
 
-class Example(QWidget):
+# original import: from PyQt5.QtWidgets import (QApplication, QWidget, QToolTip, QPushButton, QDesktopWidget)
+# PyCharm says:
+import PyQt5.QtWidgets
+# and so on:
+import PyQt5.QtGui
+import PyQt5.QtCore
+
+class Example(PyQt5.QtWidgets.QWidget):
 
 	def __init__(self):
 		super().__init__()
@@ -13,29 +16,29 @@ class Example(QWidget):
 		self.initUI()
 
 	def initUI(self):
-		QToolTip.setFont(QFont('Open Sans', 8))
+		PyQt5.QtWidgets.QToolTip.setFont(PyQt5.QtGui.QFont('Open Sans', 8))
 
-		btn = QPushButton('Quit', self)
-		btn.clicked.connect(QCoreApplication.instance().quit)
+		btn = PyQt5.QtWidgets.QPushButton('Quit', self)
+		btn.clicked.connect(PyQt5.QtCore.QCoreApplication.instance().quit)
 		btn.setToolTip('Quits the \nApplication')
 		btn.resize(btn.sizeHint())
 		btn.move(50,50)
 
 		self.setGeometry(300, 300, 300, 220)
 		self.setWindowTitle('Centering Window on Desktop')
-		self.setWindowIcon(QIcon('./Icons/gxs-256.ico'))
+		self.setWindowIcon(PyQt5.QtGui.QIcon('./Icons/gxs-256.ico'))
 		self.center()
 
 		self.show()
 
 	def center(self):
 		winGeo = self.frameGeometry()
-		centerPoint = QDesktopWidget().availableGeometry().center()
+		centerPoint = PyQt5.QtWidgets.QDesktopWidget().availableGeometry().center()
 		winGeo.moveCenter(centerPoint)
 		self.move(winGeo.topLeft())
 
 if __name__ == '__main__':
-	app = QApplication(sys.argv)
+	app = PyQt5.QtWidgets.QApplication(sys.argv)
 	app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
 
 	ex = Example()
