@@ -1,4 +1,4 @@
-# I'm not shure, but i believe, we don't need this for our learning - Gerd
+# I'm not shure, but i believe, i don't need this for my learning - Gerd
 
 import sys
 from cx_Freeze import setup, Executable

@@ -44,7 +44,7 @@ if __name__ == '__main__':
 	ex = Example()
 	sys.exit(app.exec_())
 
-#reply = QMessageBox.question(self, 'Message',
+# reply = QMessageBox.question(self, 'Message',
 #    "Are you sure you want to quit?", QMessageBox.Yes | 
 #    QMessageBox.No, QMessageBox.No)
 '''
@@ -56,9 +56,9 @@ The last parameter is the default button. It is the button which has initially
 the keyboard focus. The return value is stored in the reply variable.
 '''
 
-#if reply == QtGui.QMessageBox.Yes:
+# if reply == QtGui.QMessageBox.Yes:
 #    event.accept()
-#else:
+# else:
 #    event.ignore()
 '''
 Here we test the return value. If we click the Yes button, 

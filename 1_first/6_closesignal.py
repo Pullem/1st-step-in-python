@@ -33,10 +33,10 @@ if __name__ == '__main__':
 	ex = Example()
 	sys.exit(app.exec_())
 
-#from PyQt5.QtCore import QCoreApplication
+# from PyQt5.QtCore import QCoreApplication
 '''We need an object from the QtCore module.'''
 
-#btn = QPushButton('Quit', self)
+# btn = QPushButton('Quit', self)
 '''
 We create a push button. The button is an instance of the QPushButton class.
 The first parameter of the constructor is the label of the button. 
@@ -44,7 +44,7 @@ The second parameter is the parent widget.
 The parent widget is the Example widget, which is a QWidget by inheritance.
 '''
 
-#btn.clicked.connect(QCoreApplication.instance().quit)
+# btn.clicked.connect(QCoreApplication.instance().quit)
 '''
 The event processing system in PyQt5 is built with the signal & slot mechanism.
 If we click on the button, the signal clicked is emitted. 
