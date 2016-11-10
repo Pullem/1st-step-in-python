@@ -1,9 +1,9 @@
 import sys
-from PyQt5.QtWidgets import QMainWindow, QApplication, QAction, qApp
-from PyQt5.QtGui import QIcon
+import PyQt5.QtWidgets
+import PyQt5.QtGui
 import qdarkstyle
 
-class Example(QMainWindow):
+class Example(PyQt5.QtWidgets.QMainWindow):
 	
 	def __init__(self):
 		super().__init__()
@@ -12,9 +12,10 @@ class Example(QMainWindow):
 		
 		
 	def initUI(self):               
-		exitAction = QAction(QIcon('.\..\..\Tools\WindowsIcons-master\WindowsPhone\dark\/appbar.close.png'), 'Exit', self)
+		exitAction = PyQt5.QtWidgets.QAction(
+			PyQt5.QtGui.QIcon('./Icons/cross.png'), 'Exit', self)
 		exitAction.setShortcut('Ctrl+Q')
-		exitAction.triggered.connect(qApp.quit)
+		exitAction.triggered.connect(PyQt5.QtWidgets.qApp.quit)
 		
 		self.toolbar = self.addToolBar('Exit')
 		self.toolbar.addAction(exitAction)
@@ -25,8 +26,11 @@ class Example(QMainWindow):
 		
 		
 if __name__ == '__main__':
-	app = QApplication(sys.argv)
+	app = PyQt5.QtWidgets.QApplication(sys.argv)
 	app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
 
 	ex = Example()
 	sys.exit(app.exec_())
+
+# we can move this toolbar to all sides of our window:
+# just move the two parallel vertical lines left of the red cross

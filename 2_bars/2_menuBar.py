@@ -1,19 +1,22 @@
 import sys
-from PyQt5.QtWidgets import QMainWindow, QAction, qApp, QApplication
-from PyQt5.QtGui import QIcon
+import PyQt5.QtWidgets
+import PyQt5.QtGui
 import qdarkstyle
 
-class ExampleMenu(QMainWindow):
+
+class ExampleMenu(PyQt5.QtWidgets.QMainWindow):
 	def __init__(self):
 		super().__init__()
 
 		self.initUI()
 
 	def initUI(self):
-		exitAction = QAction(QIcon('./Icons/close.png'), '&Exit', self)
+		exitAction = PyQt5.QtWidgets.QAction(PyQt5.QtGui.QIcon('./Icons/cross.png'), '&Exit - item of file', self)
 		exitAction.setShortcut('Ctrl+Q')
-		exitAction.setStatusTip('Quit the Application')
-		exitAction.triggered.connect(qApp.quit)
+		# which characters will be accepted ??
+		# exitAction.setShortcut('Shortcut: Ctrl+Q')
+		exitAction.setStatusTip('Statusbar: Quit the Application')
+		exitAction.triggered.connect(PyQt5.QtWidgets.qApp.quit)
 
 		self.statusBar()
 
@@ -26,7 +29,7 @@ class ExampleMenu(QMainWindow):
 		self.show()
 
 if __name__ == '__main__':
-	app = QApplication(sys.argv)
+	app = PyQt5.QtWidgets.QApplication(sys.argv)
 	app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
 
 	ex = ExampleMenu()

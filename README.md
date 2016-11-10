@@ -14,7 +14,8 @@ WinPython-64bit-3.5.2.1Qt5\python-3.5.2.amd64
 My ide is JetBrains PyCharm Community Edition 2016.2
 
 ## icons
-icons i use: **fugue-icons** here from github
+original icons used here in these examples: github **Templarian/WindowsIcons**
+icons i use: **fugue-icons** also here from github
 
 ## import
 from ... import ... 
@@ -110,5 +111,5 @@ in **quick search**: QWidget  ; one answer is 'PyQt5.QtWidgets.QWidget' ,
 left mouse click and than you will find a pointer to the C++ doc, scroll down
 **Public Functions** and here you find more information to 'resize' 'move' ... :
 
-[learn more here](http://zetcode.com/gui/pyqt4/firstprograms/) or
+[learn more here](http://zetcode.com/gui/pyqt5/) or
 [here](https://pythonprogramming.net/basic-gui-pyqt-tutorial/)

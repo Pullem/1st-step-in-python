@@ -27,9 +27,16 @@ if __name__ == '__main__':
 
 	w = PyQt5.QtWidgets.QWidget()
 	w.resize(250, 150)
-	w.move(300, 300)
-	w.setWindowTitle('Simple')
+	w.move(100, 100)
+	w.setWindowTitle('First')
 	w.show()
+
+# can we open a second window ?
+	w2 = PyQt5.QtWidgets.QWidget()
+	w2.resize(350, 50)
+	w2.move(300, 300)
+	w2.setWindowTitle('Second')
+	w2.show()
 
 	sys.exit(app.exec_())
 

@@ -18,7 +18,7 @@ class Example(PyQt5.QtWidgets.QMainWindow):
 		text_edit = PyQt5.QtWidgets.QTextEdit()
 		self.setCentralWidget(text_edit)
 
-# of course, this path to 'appbar.close.png' doesn't exist, therefor modyfy this line for our environment.
+# of course, this path to 'appbar.close.png' doesn't exist, therefor modify this line for our environment.
 # with the original line:
 # no error at execution of this script, but, in the gui, move your mouse under the menueitem 'file' ( a bit right),
 # and you will see only a blue frame without icon

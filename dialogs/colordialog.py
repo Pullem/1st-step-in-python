@@ -1,53 +1,50 @@
 import sys
 import qdarkstyle
-from PyQt5.QtWidgets import (QWidget, QPushButton, QFrame, 
-	QColorDialog, QApplication)
-from PyQt5.QtGui import QColor
+import PyQt5.QtWidgets
+import PyQt5.QtGui
 
 
-class Example(QWidget):
-	
+class Example(PyQt5.QtWidgets.QWidget):
 	def __init__(self):
 		super().__init__()
-		
-		self.initUI()
-		
-		
-	def initUI(self):      
 
-		col = QColor(0, 0, 0) 
+		self.init_ui()
 
-		self.btn = QPushButton('Dialog', self)
+	def init_ui(self):
+		col = PyQt5.QtGui.QColor(0, 0, 0)
+
+		self.btn = PyQt5.QtWidgets.QPushButton('Dialog', self)
 		self.btn.move(20, 20)
 
-		self.btn.clicked.connect(self.showDialog)
+		self.btn.clicked.connect(self.show_dialog)
 
-		self.frm = QFrame(self)
-		self.frm.setStyleSheet("QWidget { background-color: %s }" 
-			% col.name())
-		self.frm.setGeometry(130, 22, 100, 100)            
-		
+		self.frm = PyQt5.QtWidgets.QFrame(self)
+		self.frm.setStyleSheet("QWidget { background-color: %s }"
+		                       % col.name())
+		self.frm.setGeometry(130, 22, 100, 100)
+
 		self.setGeometry(300, 300, 250, 180)
 		self.setWindowTitle('Color dialog')
 		self.show()
-		
-		
-	def showDialog(self):
-	  
-		col = QColorDialog.getColor()
+
+	def show_dialog(self):
+		col = PyQt5.QtWidgets.QColorDialog.getColor()
+		print(col.name)
 
 		if col.isValid():
 			self.frm.setStyleSheet("QWidget { background-color: %s }"
-				% col.name())
-			
-		
+			                       % col.name())
+
+		print("QWidget { background-color: %s }"% col.name())
+
+
 if __name__ == '__main__':
-	app = QApplication(sys.argv)
+	app = PyQt5.QtWidgets.QApplication(sys.argv)
+	print(app)
 	app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
 
 	ex = Example()
 	sys.exit(app.exec_())
-
 
 '''
 The application example shows a push button and a QFrame. 

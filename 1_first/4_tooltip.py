@@ -11,7 +11,7 @@ class Example(PyQt5.QtWidgets.QWidget):
 		self.initUI()
 
 	def initUI(self):
-		PyQt5.QtWidgets.QToolTip.setFont(PyQt5.QtGui.QFont('Open Sans', 8))
+		PyQt5.QtWidgets.QToolTip.setFont(PyQt5.QtGui.QFont('Open Sans', 12))
 
 		self.setToolTip('This is a <b>QWidget</b> widget')
 

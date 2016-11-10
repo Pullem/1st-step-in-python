@@ -21,6 +21,9 @@ class Example(PyQt5.QtWidgets.QWidget):
 		# btn = PyQt5.QtWidgets.QPushButton('Quit', self)
 		# width of button automaticaly adapted:
 		btn = PyQt5.QtWidgets.QPushButton('Quit or sth else and more', self)
+		print("btn = ", btn)
+		# here we connect a kind of cable:
+		# from 'btn' , our QPushButton, to the running instance, and transfer 'quit' when clicked
 		btn.clicked.connect(PyQt5.QtCore.QCoreApplication.instance().quit)
 		# in the next line '\n' means 'new line' :
 		# btn.setToolTip('Quits the \nApplication')

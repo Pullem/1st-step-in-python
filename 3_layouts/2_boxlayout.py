@@ -1,25 +1,26 @@
 import sys
 import qdarkstyle
-from PyQt5.QtWidgets import (QWidget, QPushButton, QHBoxLayout, QVBoxLayout,
-	QApplication)
+import PyQt5.QtWidgets
 
-class Example(QWidget):
+
+class Example(PyQt5.QtWidgets.QWidget):
 
 	def __init__(self):
 		super().__init__()
 
-		self.initUI()
+		self.init_ui()
 
-	def initUI(self):
-		okButton = QPushButton('OK')
-		cancelButton = QPushButton('Cancel')
+	def init_ui(self):
+		# these two buttons are only graphical elements, without function   - gerd
+		ok_button = PyQt5.QtWidgets.QPushButton('OK')
+		cancel_button = PyQt5.QtWidgets.QPushButton('Cancel')
 
-		hbox = QHBoxLayout()
+		hbox = PyQt5.QtWidgets.QHBoxLayout()
 		hbox.addStretch(1)
-		hbox.addWidget(okButton)
-		hbox.addWidget(cancelButton)
+		hbox.addWidget(ok_button)
+		hbox.addWidget(cancel_button)
 
-		vbox = QVBoxLayout()
+		vbox = PyQt5.QtWidgets.QVBoxLayout()
 		vbox.addStretch(1)
 		vbox.addLayout(hbox)
 
@@ -30,7 +31,7 @@ class Example(QWidget):
 		self.show()
 
 if __name__ == '__main__':
-	app = QApplication(sys.argv)
+	app = PyQt5.QtWidgets.QApplication(sys.argv)
 	app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
 
 	ex = Example()
@@ -61,5 +62,5 @@ The stretch factor in the vertical box will push the horizontal box
 with the buttons to the bottom of the window.
 '''
 
-#self.setLayout(vbox)
+# self.setLayout(vbox)
 '''Finally, we set the main layout of the window.'''

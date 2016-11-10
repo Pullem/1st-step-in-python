@@ -1,10 +1,10 @@
 import sys
 import qdarkstyle
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import QWidget, QApplication
+import PyQt5.QtCore
+import PyQt5.QtWidgets
 
 
-class Example(QWidget):
+class Example(PyQt5.QtWidgets.QWidget):
     
     def __init__(self):
         super().__init__()
@@ -21,7 +21,7 @@ class Example(QWidget):
         
     def keyPressEvent(self, e):
         
-        if e.key() == Qt.Key_Escape:
+        if e.key() == PyQt5.QtCore.Qt.Key_Escape:
             self.close()
         
         

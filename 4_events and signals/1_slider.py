@@ -1,11 +1,10 @@
 import sys
 import qdarkstyle
-from PyQt5.QtCore import Qt
-from PyQt5.QtWidgets import (QWidget, QLCDNumber, QSlider, 
-	QVBoxLayout, QApplication)
+import PyQt5.QtCore
+import PyQt5.QtWidgets
 
 
-class Example(QWidget):
+class Example(PyQt5.QtWidgets.QWidget):
 	
 	def __init__(self):
 		super().__init__()
@@ -16,7 +15,7 @@ class Example(QWidget):
 	def initUI(self):
 		
 		lcd = QLCDNumber(self)
-		sld = QSlider(Qt.Horizontal, self)
+		sld = QSlider(PyQt5.QtCore.Qt.Horizontal, self)
 
 		vbox = QVBoxLayout()
 		vbox.addWidget(lcd)
