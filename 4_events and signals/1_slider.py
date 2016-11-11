@@ -9,15 +9,14 @@ class Example(PyQt5.QtWidgets.QWidget):
 	def __init__(self):
 		super().__init__()
 		
-		self.initUI()
-		
-		
-	def initUI(self):
-		
-		lcd = QLCDNumber(self)
-		sld = QSlider(PyQt5.QtCore.Qt.Horizontal, self)
+		self.init_ui()
 
-		vbox = QVBoxLayout()
+	def init_ui(self):
+		
+		lcd = PyQt5.QtWidgets.QLCDNumber(self)  # https://doc.qt.io/qt-5/qlcdnumber.html#details
+		sld = PyQt5.QtWidgets.QSlider(PyQt5.QtCore.Qt.Horizontal, self)
+
+		vbox = PyQt5.QtWidgets.QVBoxLayout()
 		vbox.addWidget(lcd)
 		vbox.addWidget(sld)
 
@@ -31,7 +30,7 @@ class Example(PyQt5.QtWidgets.QWidget):
 
 if __name__ == '__main__':
 	
-	app = QApplication(sys.argv)
+	app = PyQt5.QtWidgets.QApplication(sys.argv)
 	app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
 
 	ex = Example()

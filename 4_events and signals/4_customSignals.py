@@ -1,12 +1,12 @@
 import sys
 import qdarkstyle
-from PyQt5.QtCore import pyqtSignal, QObject
+import PyQt5.QtCore
 from PyQt5.QtWidgets import QMainWindow, QApplication
 
 
-class Communicate(QObject):
+class Communicate(PyQt5.QtCore.QObject):
 	
-	closeApp = pyqtSignal() 
+	closeApp = PyQt5.QtCore.pyqtSignal()
 	
 
 class Example(QMainWindow):
@@ -14,10 +14,9 @@ class Example(QMainWindow):
 	def __init__(self):
 		super().__init__()
 		
-		self.initUI()
-		
-		
-	def initUI(self):      
+		self.init_ui()
+
+	def init_ui(self):
 
 		self.c = Communicate()
 		self.c.closeApp.connect(self.close)       
@@ -25,9 +24,10 @@ class Example(QMainWindow):
 		self.setGeometry(300, 300, 290, 150)
 		self.setWindowTitle('Emit signal')
 		self.show()
-		
-		
+
 	def mousePressEvent(self, event):
+		# 'mousePressEvent' is a method of 'class null'
+		# with this new 'def' we override the method
 		
 		self.c.closeApp.emit()
 		

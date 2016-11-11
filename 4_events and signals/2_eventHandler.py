@@ -9,31 +9,29 @@ class Example(PyQt5.QtWidgets.QWidget):
     def __init__(self):
         super().__init__()
         
-        self.initUI()
-        
-        
-    def initUI(self):      
+        self.init_ui()
+
+    def init_ui(self):
         
         self.setGeometry(300, 300, 250, 150)
         self.setWindowTitle('Event handler')
         self.show()
-        
-        
-    def keyPressEvent(self, e):
+
+    def key_press_event(self, e):
         
         if e.key() == PyQt5.QtCore.Qt.Key_Escape:
             self.close()
         
         
 if __name__ == '__main__':
-    app = QApplication(sys.argv)
+    app = PyQt5.QtWidgets.QApplication(sys.argv)
     app.setStyleSheet(qdarkstyle.load_stylesheet_pyqt5())
 
     ex = Example()
     sys.exit(app.exec_())
 
 '''
-we reimplement the keyPressEvent() event handler.
+we reimplement the key_press_event() event handler.
 '''
 
 # if e.key() == Qt.Key_Escape:
